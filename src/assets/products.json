@@ -1,0 +1,343 @@
+[
+    {
+        "id": "1",
+        "name": "Say You'll Always Wonder Black Hoodie",
+        "category": "Clothes",
+        "price": 75.00,
+        "image": "https://store.taylorswift.com/cdn/shop/files/tljozygFMsUWAFR0g88SAqfaewQjZgFl-1.png?v=1731508019&width=2890",
+        "hover": "https://store.taylorswift.com/cdn/shop/files/u2Onk7vvPqLdaIfcEF7vYorYiSRMaX03-2.png?v=1731508019&width=2890",
+        "description": "Black hoodie featuring 'Say You'll Always Wonder' and TTPD logo printed on front with diamond design and 'If The Glint In My Eye Traced The Depths Of Your Sigh' song lyrics and other 'Chloe or Sam or Sophia or Marcus' song lyrics and TTPD logo printed up wearer's right arm with photo of Taylor Swift and 'The Tortured Poets Department The Anthology' album title, 'So If You Wanna Break My Cold, Cold Heart Say You Loved Me And If You Wanna Tear My World Apart Say You'll Always Wonder', 'Could It Be Enough To Just Float In Your Orbit', with 'Taylor Swift' and moon phase designs printed on back.",
+        "sizes": {
+            "S": 2,
+            "M": 3,
+            "L": 0,
+            "XL": 1
+        } 
+    },
+    {
+        "id": "2",
+        "name": "TTPD V-Neck Cropped Sweater",
+        "category": "Clothes",
+        "price": 70.00,
+        "image": "https://store.taylorswift.com/cdn/shop/files/revq9qHaaZk3jn2CgrOyQ0lwHOdClNyXz0O-1.png?v=1731508979&width=2890",
+	    "hover": "https://store.taylorswift.com/cdn/shop/files/APmw4Tso3gfc4USS63gsaogQWfMuTIKU-2.png?v=1731508979&width=2890",
+        "description": "Brown v-neck sweater feature TTPD logo embroidered on wearer's left chest with a white stripe on sleeve cuffs and neckline.",
+        "sizes": {
+            "S": 1,
+            "M": 2,
+            "L": 1,
+            "XL": 4
+        } 
+    },
+    {
+        "id": "3",
+        "name": "The Tortured Poets Department Black Jacket & 2 Patch Set Bundle",
+        "category": "Clothes",
+        "price": 95.00,
+        "image": "https://store.taylorswift.com/cdn/shop/files/Lqmh4hhrLLhea1hoGl4v9OZPcsBMaW2e_36cf0290-d8ad-46b0-8273-a55799f2d66b.png?v=1713482381&width=550",
+	    "hover": "https://store.taylorswift.com/cdn/shop/files/ltJTRI88PlFCKOlXKsqPOnjSp7bZU1XU_f8d06b9b-18ac-4058-9166-4e1c53fd7c8a.png?v=1713482381&width=550",
+        "description": "Ink black collared jacket featuring front zip with 'The Tortured Poets Department' embroidered on front left chest and 'All's Fair In Love And Poetry' embroidered on back with snaps at both wrists. Includes set of two patches ('TTPD' album logo patch and typewriter design patch). Please note, this product does not include any additional patches.",
+        "sizes": {
+            "S": 4,
+            "M": 2,
+            "L": 5,
+            "XL": 10
+        } 
+    },
+    {
+        "id": "4",
+        "name": "TTPD Black Embossed Hoodie",
+        "category": "Clothes",
+        "price": 75.00,
+        "image": "https://store.taylorswift.com/cdn/shop/files/TxWcafubrT1genj4SHeXxRXO6fGH6lJA.png?v=1726508083&width=1920",
+	    "hover": "https://store.taylorswift.com/cdn/shop/files/NzCLADHdlPQ7FeWKVcQyMJEBbJhYOKMc.png?v=1726508083&width=2890",
+        "description": "Black hoodie with front pocket featuring embossed 'TTPD' album logo on front.",
+        "sizes": {
+            "S": 11,
+            "M": 12,
+            "L": 4,
+            "XL": 1
+        } 
+    },
+    {
+        "id": "5",
+        "name": "TTPD Gray Embossed Hoodie",
+        "category": "Clothes",
+        "price": 75.00,
+        "image": "https://store.taylorswift.com/cdn/shop/files/dik0TH3QQQ3xWOJPaoCPwrEfM1Ivx5X6_bfc10d3c-2eaf-4b3a-8a3f-c8b13ce844ef.png?v=1727962966&width=1920",
+	    "hover": "https://store.taylorswift.com/cdn/shop/files/8d1HvgFqaKlEnkN0B9ZjhYYhmssK7WjQ_404dfdc9-7cff-4e81-8582-6faad9a57985.png?v=1727962966&width=2890",
+        "description": "Gray hoodie with front pocket featuring embossed 'TTPD' album logo on front.",
+        "sizes": {
+            "S": 13,
+            "M": 6,
+            "L": 8,
+            "XL": 4
+        } 
+    },
+    {
+        "id": "6",
+        "name": "But Daddy I Love Him Hoodie",
+        "category": "Clothes",
+        "price": 75.00,
+        "image": "https://store.taylorswift.com/cdn/shop/files/V8NOZcXld6urCH44acm3OfmhThjUVgJV-2.png?v=1717856636&width=2890",
+	    "hover": "https://store.taylorswift.com/cdn/shop/files/74wVG2NTXyz3QQY1Sw7pt28CSzlXSO6P-1_1c42634e-3ee7-407f-b1c4-f88cdcaaf6ea.jpg?v=1717856636&width=2890",
+        "description": "Gray hoodie with front pocket featuring 'But Daddy I Love Him' song lyrics, 'I'll Tell You Something About My Good Name It's Mine Alone To Disgrace' song lyrics, 'Taylor Swift', 'TTPD' album logo, and '©2024' printed on front.",
+        "sizes": {
+            "S": 14,
+            "M": 16,
+            "L": 6,
+            "XL": 7
+        } 
+    },
+    {
+        "id": "7",
+        "name": "The Tortured Poets Department Crewneck Sweater",
+        "category": "Clothes",
+        "price": 65.00,
+        "image": "https://store.taylorswift.com/cdn/shop/files/bhO3L6kfrRaiZjI8DIbB59bn3fKy6E2J.png?v=1727962843&width=2200",
+	    "hover": "https://store.taylorswift.com/cdn/shop/files/zzyAqQxeQ9H8iAVYKyvzpc2fNyzg67ue_c3992a43-8473-4d78-af45-406783732676.png?v=1713483019&width=2200",
+        "description": "Ghosted white crewneck sweater featuring parchment beige contrast striped ribbing at collar, waist, and wrists with 'TTPD' album logo and 'The Tortured Poets Department' printed on wearer's front left chest.",
+        "sizes": {
+            "S": 2,
+            "M": 0,
+            "L": 0,
+            "XL": 4
+        } 
+    },
+    {
+        "id": "8",
+        "name": "You Need To Calm Down Hoodie",
+        "category": "Clothes",
+        "price": 75.00,
+        "image": "https://store.taylorswift.com/cdn/shop/files/5i4oM1IqO43aoc7DFu4D8JObKCD6dPhG-1.png?v=1731509002&width=2890",
+	    "hover": "https://store.taylorswift.com/cdn/shop/files/P6H4Zhi3rEsFstfcX8hdI4gaaU4dCLYl-2.png?v=1731509003&width=2890",
+        "description": "Gray hoodie with front pocket featuring 'Taylor Swift' with star design printed on wearer's front left chest with And 'I ain't trying to mess with your self expression' and other 'You Need To Calm Down' song lyrics printed on wearer's right sleeve and photo of Taylor Swift with 'you need to calm down' song lyrics printed on back.",
+        "sizes": {
+            "S": 4,
+            "M": 5,
+            "L": 7,
+            "XL": 1
+        } 
+    },
+    {
+        "id": "9",
+        "name": "1989 (Taylor's Version) Pink Crewneck",
+        "category": "Clothes",
+        "price": 64.89,
+        "image": "https://store.taylorswift.com/cdn/shop/files/BQek5nOEE7fIbN4yePyJMz4iLYMtVNHN.png?v=1696604341&width=1100",
+	    "hover": "https://store.taylorswift.com/cdn/shop/files/4s1jhKfaFnfjS2QoatFgbgqMA1NYWKgV.png?v=1696604341&width=1100",
+        "description": "Pink crewneck featuring 'Taylor Swift' printed on front and 1989 (Taylor's Version) photos with '1989 Taylor's Version' printed on back.",
+        "sizes": {
+            "S": 3,
+            "M": 1,
+            "L": 0,
+            "XL": 0
+        } 
+    },
+    {
+        "id": "10",
+        "name": "Red (Taylor's Version) I Remember It All Too Well Zip Polo",
+        "category": "Clothes",
+        "price": 75.00,
+        "image": "",
+	    "hover": "",
+        "description": "Red zip polo with cream trim at wrists and collar featuring 'Taylor Swift' in circle design printed on wearer's front left chest and 'Cause this city's barren cold I still remember the first fall of snow and how it glistened as it fell I remember it all too well' song lyrics with star design printed on back.",
+        "sizes": {
+            "S": 6,
+            "M": 3,
+            "L": 8,
+            "XL": 14
+        } 
+    },
+    
+    {
+        "id": "11",
+        "name": "The Tortured Poets Department Candle Regular price",
+        "category": "Accessories",
+        "price": 50.00,
+        "image": "https://store.taylorswift.com/cdn/shop/files/kd6zJCxBdc9yWiHGuP7LqeQZp1lLnB8S-1.png?v=1731940425&width=1100",
+        "hover": "https://store.taylorswift.com/cdn/shop/files/LRmAdBiKu403yUmXjlbJHL99kjfENufh-2.png?v=1731940425&width=2200",
+        "description": "8oz soy candle in black vessel with white wax featuring 'TTPD The Tortured Poets Department' and line design printed on front and Taylor Swift in box design on back. Candle features an oud and amber scent.",
+        "stock": 14
+    },
+    {
+        "id": "12",
+        "name": "TTPD Black Purse",
+        "category": "Accessories",
+        "price": 75.00,
+        "image": "https://store.taylorswift.com/cdn/shop/files/4GwEjJH2XN2t63W0QyCIFWRKWvQiC91S-1.png?v=1731508803&width=2890",
+        "hover": "https://store.taylorswift.com/cdn/shop/files/GYt2Org4cHiIxYav8hoPrsMTV1m45frz-2.jpg?v=1731508803&width=550",
+        "description": "Black faux leather bag featuring TTPD gold metal hardware on front and gold metal buckle on adjustable strap with magnetic closure.",
+        "stock": 32
+    },
+    {
+        "id": "13",
+        "name": "The Tortured Poets Department Tumbler",
+        "category": "Accessories",
+        "price": 35.00,
+        "image": "https://store.taylorswift.com/cdn/shop/files/rTWcFPoupeskrMPaAeLGM0RbKwqQvTBL-2.png?v=1725382377&width=2890",
+        "hover": "https://store.taylorswift.com/cdn/shop/files/OUDLnBt4CHpYy3bPxvUkpz5OqQHX77Qn-1.png?v=1725382377&width=2048",
+        "description": "Stainless steel tumbler with lid and reusable straw featuring 'TTPD' album logo and 'The Tortured Poets Department' printed on front and 'Taylor Swift' with box design printed on back.",
+        "stock": 5
+    },
+    {
+        "id": "14",
+        "name": "The Tortured Poets Department Ring",
+        "category": "Accessories",
+        "price": 35.00,
+        "image": "https://store.taylorswift.com/cdn/shop/files/qsAI9up4ZCg6sn7gREXIjwpCaS882fYM.png?v=1713483350&width=550",
+        "hover": "https://store.taylorswift.com/cdn/shop/files/1ZCiofKbVFpGllujhq7FM9DuU4d3NKDw.jpg?v=1713483350&width=550",
+        "description": "Gold-plated ring featuring 'TTPD' album logo engraved on top and 'Taylor Swift' engraved along the inside. Comes with cotton/poly cinch bag featuring 'TTPD' album logo printed on front.",
+        "stock": 7
+    },    
+    {
+        "id": "15",
+        "name": "The Tortured Poets Department Earrings",
+        "category": "Accessories",
+        "price": 25.00,
+        "image": "https://store.taylorswift.com/cdn/shop/files/xwnbgPFU8bt1F8p03HR7c3uTgJweyu8W_d5dfb134-7568-48f3-a9d5-4630408ed8b5.png?v=1713483085&width=550",
+        "hover": "https://store.taylorswift.com/cdn/shop/files/PBKeGVN0zSQ6k4KC9uUUd4pRIFC4HtiZ.jpg?v=1713483089&width=550",
+        "description": "Set of 2 gold-plated 'TTPD' album logo earrings. Comes with cotton/poly cinch bag featuring 'TTPD' album logo printed on front.",
+        "stock": 6
+    },
+    {
+        "id": "16",
+        "name": "The Tortured Poets Department Necklace",
+        "category": "Accessories",
+        "price": 35.00,
+        "image": "https://store.taylorswift.com/cdn/shop/files/3RtafwkFFYjIYodkr2sx6oasPpVcEOZR.png?v=1713483299&width=550",
+        "hover": "https://store.taylorswift.com/cdn/shop/files/jpqLTQZ3TPtqysaVCpxU34hsmxBJhdZO.png?v=1713483299&width=550",
+        "description": "Gold-plated necklace featuring 'TTPD' album logo charm, adjustable back closure, and small charm with 'Taylor Swift' engraved at clasp. Comes with cotton/poly cinch bag featuring 'TTPD' album logo printed on front.",
+        "stock": 63
+    },
+    {
+        "id": "17",
+        "name": "Taylor Swift Bejeweled Necklace",
+        "category": "Accessories",
+        "price": 40.00,
+        "image": "https://store.taylorswift.com/cdn/shop/files/5J9YRB1jlIzZrjHJdtq54CbfQ5w6TEpe-1.png?v=1731508654&width=2890",
+        "hover": "https://store.taylorswift.com/cdn/shop/files/lA2t4sJ9sknzzUfNZ6OEidunMjwADNYO-2.png?v=1731508654&width=2890",
+        "description": "Gold necklace with adjustable clasp closure and 'TS' engraved on charm, featuring multicolored gemstones.",
+        "stock": 31
+    },
+    {
+        "id": "18",
+        "name": "Taylor Swift Bejeweled Ring",
+        "category": "Accessories",
+        "price": 30.00,
+        "image": "https://store.taylorswift.com/cdn/shop/files/2pw79MCbJol4rrU2hsgfv0Ua1mJui2t7-1.png?v=1731508669&width=2200",
+        "hover": "https://store.taylorswift.com/cdn/shop/files/IXbYXOdGlAM2DqZWMKdeVo0wMxgIV5jv-2.png?v=1731508669&width=2890",
+        "description": "Gold ring featuring multicolored gemstones with 'Taylor Swift' engraved along the inside.",
+        "stock": 22
+    },
+    {
+        "id": "19",
+        "name": "Taylor Swift Meet Me At Midnight Mug",
+        "category": "Accessories",
+        "price": 35.00,
+        "image": "https://store.taylorswift.com/cdn/shop/files/Ydkk0faReOe4aVpvbqVMcZ2glbRirViH-1.png?v=1731508695&width=2890",
+        "hover": "https://store.taylorswift.com/cdn/shop/files/FcLurBkNW1dVXhxRusUVIIdYC3CdezBk-2.png?v=1731508695&width=2890",
+        "description": "Midnight blue mug featuring 'Meet me at Midnight' song lyrics with star design printed on front and clock design with 'TS' printed on interior.",
+        "stock": 18
+    },
+    {
+        "id": "20",
+        "name": "Pathological People Pleaser Hat",
+        "category": "Accessories",
+        "price": 35.00,
+        "image": "https://store.taylorswift.com/cdn/shop/files/wLWz6XfPhv25P3X5glSgThqvDUIBohvL-1.png?v=1731507816&width=2890",
+        "hover": "https://store.taylorswift.com/cdn/shop/files/X7VXtqgg2v4tulBFVxjgShPScoQqPgj6-2.png?v=1731507816&width=2890",
+        "description": "Cream and blue dad hat featuring 'Pathological People Pleaser' song lyrics embroidered on front with 'Taylor Swift' embroidered on back.  Adjustable back closure.",
+        "stock": 59
+    },
+    {
+        "id": "20",
+        "name": "The Tortured Poets Department Vinyl + Bonus Track 'The Manuscript'",
+        "category": "Vinyl",
+        "price": 34.99,
+        "image": "https://store.taylorswift.com/cdn/shop/files/oIrR9qXXeQRc3OuzsMq1YAqie8MY8mhq-1.png?v=1711052313&width=2890",
+        "hover": "https://store.taylorswift.com/cdn/shop/files/0984353452.png?v=1711052313&width=550",
+        "description": "16 Tracks + Bonus Track 'The Manuscript' Collectible 24-page book-bound jacket with three replicas of Taylor Swift's handwritten lyrics unique to this vinyl and unique photos 2 Ghosted White vinyl discs Collectible album sleeves  including unique photos Limit 4 per customer. U.S. Customers Only.",
+        "stock": 12
+    },
+    {
+        "id": "21",
+        "name": "Midnights: Moonstone Blue Edition Vinyl",
+        "category": "Vinyl",
+        "price": 29.99,
+        "image": "https://store.taylorswift.com/cdn/shop/products/vinyl-1.png?v=1665149497&width=2890",
+        "hover": "https://store.taylorswift.com/cdn/shop/products/vinyl-1_backwdisc.png?v=1665149497&width=2048",
+        "description": "Each Vinyl Album Includes: 13 Songs 1 of 4 collectible album jackets with unique front and back cover art 1 of 4 unique marbled color vinyl discs (the Moonstone Blue Edition features a moonstone blue marbled color disc) 1 of 4 collectible album sleeves (each side features a different full-size photo of Taylor) 1 of 4 full-size gatefold photos A collectible 8-page lyric booklet with never-before-seen photos, unique to Midnights variants",
+        "stock": 34
+    },
+    {
+        "id": "22",
+        "name": "evermore album deluxe edition vinyl",
+        "category": "Vinyl",
+        "price": 26.00,
+        "image": "https://store.taylorswift.com/cdn/shop/products/IMG_8271.png?v=1648835383&width=550",
+        "hover": "https://store.taylorswift.com/cdn/shop/products/VinylBack_d2c.png?v=1648835383&width=2048",
+        "description": "Each deluxe edition vinyl includes: 15 songs + 2 bonus tracks 'right where you left me' and 'it's time to go' Depiction of this product is a digital rendering and for illustrative purposes only. Actual product detailing may vary.",
+        "stock": 5
+    },
+    {
+        "id": "23",
+        "name": "1. the 'in the trees' Edition Deluxe Vinyl Regular price",
+        "category": "Vinyl",
+        "price": 26.00,
+        "image": "https://store.taylorswift.com/cdn/shop/products/unnamed.png?v=1596812961&width=2048",
+        "hover": "",
+        "description": "Each deluxe vinyl album includes: 16 songs + bonus song 'the lakes' 1 of 8 unique, collectible covers 1 of 8 unique, collectible back covers 1 of 8 collectible vinyl album sleeves (each version contains lyrics, 5 unique photos, and unique artwork) 1 of 8 unique vinyl disc photos 2 vinyl albums (each version including a unique color*) *Actual vinyl color may vary",
+        "stock": 29
+    },
+    {
+        "id": "24",
+        "name": "Lover Vinyl",
+        "category": "Vinyl",
+        "price": 25.00,
+        "image": "https://store.taylorswift.com/cdn/shop/files/Lover-Vinyl-Reworked.png?v=1704754534&width=2048",
+        "hover": "",
+        "description": "Lover Vinyl Disc One Side A 1. I Forgot That You Existed 2. Cruel Summer 3. Lover 4. The Man 5. The Archer Disc One Side B 1. I Think He Knows 2. Miss Americana & The Heartbreak Prince 3. Paper Rings 4. Cornelia Street Disc Two Side C 1. Death By A Thousand Cuts 2. London Boy 3. Soon You'll Get Better featuring The Chicks 4. False God 5. You Need To Calm Down Disc Two Side D 1. Afterglow 2. ME! Featuring Brendon Urie of Panic! At The Disco 3. It's Nice to Have A Friend 4. Daylight",
+        "stock": 17
+    },
+    {
+        "id": "25",
+        "name": "1989 (Taylor's Version) Vinyl",
+        "category": "Vinyl",
+        "price": 31.89,
+        "image": "https://store.taylorswift.com/cdn/shop/files/8wU8sU2k4gvB0i8MJ4wakKkWpJwpOpAO-1.png?v=1698180383&width=2048",
+        "hover": "https://store.taylorswift.com/cdn/shop/files/48qJrS3K8HaY5H1iz4dEBgP5HibRoev2.png?v=1698180383&width=1100",
+        "description": "1989 (Taylor's Version) Vinyl 21 Songs Including 5 previously unreleased songs from The Vault 1 of 4 Editions: Collectible album gatefold jacket with unique front and back cover art  2 Crystal Skies Blue vinyl discs 1 of 4 Editions: Collectible album sleeves including lyrics and never-before-seen photos for each version",
+        "stock": 8
+    },
+    {
+        "id": "26",
+        "name": "RED (Taylor's Version) Red Vinyl",
+        "category": "Vinyl",
+        "price": 50.00,
+        "image": "https://store.taylorswift.com/cdn/shop/products/7E9Iulkto6PMpDvyy25y.png?v=1675363354&width=550",
+        "hover": "https://store.taylorswift.com/cdn/shop/products/7E9Iulkto6PMpDvyy25y-2.png?v=1675363354&width=550",
+        "description": "RED (Taylor's Version) Vinyl Disc 1 Side A 1. State Of Grace (Taylor's Version) 2. Red (Taylor's Version) 3. Treacherous (Taylor's Version) 4. I Knew You Were Trouble (Taylor's Version) Side B 1. All Too Well (Taylor's Version) 2. 22 (Taylor's Version) 3. I Almost Do (Taylor's Version) 4. We Are Never Ever Getting Back Together (Taylor's Version) Disc 2 Side A 1. Stay Stay Stay (Taylor's Version) 2. The Last Time (Taylor's Version) 3. Holy Ground (Taylor's Version) 4. Sad Beautiful Tragic (Taylor's Version) Side B 1. The Lucky One (Taylor's Version) 2. Everything Has Changed (Taylor's Version) 3. Starlight (Taylor's Version) 4. Begin Again (Taylor's Version) Disc 3 Side A 1. The Moment I Knew (Taylor's Version) 2. Come Back...Be Here (Taylor's Version) 3. Girl At Home (Taylor's Version) 4. State Of Grace (Acoustic Version) (Taylor's Version) Side B 1.Ronan (Taylor's Version) 2. Better Man (Taylor's Version) (From The Vault) 3. Nothing New (Taylor's Version) (From The Vault) 4. Babe (Taylor's Version) (From The Vault) Disc 4 Side A 1. Message In A Bottle (Taylor's Version) (From The Vault) 2. I Bet You Think About Me (Taylor's Version) (From The Vault) 3. Forever Winter (Taylor's Version) (From The Vault) 4. Run (Taylor's Version) (From The Vault) Side B 1. The Very First Night (Taylor's Version) (From The Vault) 2. All Too Well (10 Minute Version) (Taylor's Version) (From The Vault) Each vinyl album features: 30 songs, including 9 songs from the Vault with lyrics for all 30 songs, never before seen photos, artwork and handwritten lyrics for the 10 minute version of 'All Too Well.' Play at 45rpm for optimal sound quality.",
+        "stock": 16
+    },
+    {
+        "id": "27",
+        "name": "Speak Now (Taylor's Version) 3LP Orchid Marbled Vinyl",
+        "category": "Vinyl",
+        "price": 38.99,
+        "image": "https://store.taylorswift.com/cdn/shop/files/7dQEp2mbYqd96sibsBtB2.png?v=1687622599&width=1100",
+        "hover": "https://store.taylorswift.com/cdn/shop/files/4_BackCoverWithDiscs_orchid.png?v=1687622599&width=2048",
+        "description": "Each Vinyl Album Includes: 22 SongsIncluding 6 previously unreleased Songs From The Vault Collectible album jacket with unique front and back cover art 3 unique Orchid marbled color vinyl discs Collectible album sleeves including lyrics and never-before-seen photos Full size gatefold photograph and prologue",
+        "stock": 13
+    },
+    {
+        "id": "28",
+        "name": "Fearless (Taylor's Version) vinyl",
+        "category": "Vinyl",
+        "price": 39.00,
+        "image": "https://store.taylorswift.com/cdn/shop/products/Vinyl_1600x_c4a8f533-02ef-41ac-a2f8-2ce3894593a9.png?v=1613043173&width=1445",
+        "hover": "https://store.taylorswift.com/cdn/shop/products/Fearless_Taylor_sVersion_BackCover_94a01151-b5e9-409b-889c-3a6f88740e5e.png?v=1617466220&width=1920",
+        "description": "Fearless (Taylor's Version) vinyl Each vinyl album features: 27 songs, including 6 unreleased songs from the vault, including unique photos and artwork. 3 metallic gold color discs, each including a disc photo. Fearless (Taylor’s Version) 1. Fearless (Taylor’s Version) 2. Fifteen (Taylor’s Version) 3. Love Story (Taylor’s Version) 4. Hey Stephen (Taylor’s Version) 5. White Horse (Taylor’s Version) 6. You Belong With Me (Taylor’s Version) 7. Breathe (feat. Colbie Caillat) (Taylor’s Version) 8. Tell Me Why (Taylor’s Version) 9. You’re Not Sorry (Taylor’s Version) 10. The Way I Loved You (Taylor’s Version) 11. Forever & Always (Taylor’s Version) 12. The Best Day (Taylor’s Version) 13. Change (Taylor’s Version) 14. Jump Then Fall (Taylor’s Version) 15. Untouchable (Taylor’s Version) 16. Forever & Always (Piano Version) (Taylor’s Version) 17. Come In With The Rain (Taylor’s Version) 18. Superstar (Taylor’s Version) 19. The Other Side Of The Door (Taylor’s Version) 20. Today Was A Fairytale (Taylor’s Version) 21. You All Over Me (feat. Maren Morris) (From The Vault) 22. Mr. Perfectly Fine (From The Vault) 23. We Were Happy (From The Vault) 24. That’s When (feat. Keith Urban) (From The Vault) 25. Don’t You (From The Vault) 26. Bye Bye Baby (From The Vault)27. Bonus Track: Love Story (Taylor’s Version) - Elvira Remix ",
+        "stock": 26
+    }
+]
