@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+import { CardModule } from 'primeng/card';
+import { ButtonModule } from 'primeng/button';
 import { ProductsRoutingModule } from './products-routing.module';
 import { ProductListComponent } from './components/product-list/product-list.component';
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
@@ -9,11 +10,13 @@ import { ProductDetailComponent } from './components/product-detail/product-deta
 @NgModule({
   declarations: [
     ProductListComponent,
-    ProductDetailComponent
+    ProductDetailComponent,
   ],
   imports: [
     CommonModule,
-    ProductsRoutingModule
+    ProductsRoutingModule,
+    CardModule,
+    ButtonModule
   ]
 })
 export class ProductsModule { }
