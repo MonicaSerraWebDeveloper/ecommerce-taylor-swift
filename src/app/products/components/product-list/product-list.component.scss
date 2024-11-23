@@ -6,9 +6,12 @@
     padding: 50px 0;
 
     ::ng-deep .p-card {
-        position: relative;
         cursor: pointer;
         overflow: hidden;
+
+        .image-container {
+            position: relative;
+        }
 
         .first-image {
             max-width: 100%;

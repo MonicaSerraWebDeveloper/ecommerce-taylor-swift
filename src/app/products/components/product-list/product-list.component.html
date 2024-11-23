@@ -1,13 +1,15 @@
 <div class="products-container">
     <div class="card flex flex-wrap gap-3 justify-content-start">
         <p-card *ngFor="let product of allProducts" class="flex" [style]="{ width: '300px' }">
-            <div>
-                <img class="first-image" alt="Card" [src]="product.image" />
-                <img class="hover-image" [src]="product.hover ? product.hover : product.image" alt="image-hover">
+            <div [routerLink]="['/products', product.id]">
+                <div class="image-container">
+                    <img class="first-image" alt="Card" [src]="product.image" />
+                    <img class="hover-image" [src]="product.hover ? product.hover : product.image" alt="image-hover">
+                </div>
+                <h3>
+                    {{ product.name }}
+                </h3>
             </div>
-            <h3>
-                {{ product.name }}
-            </h3>
             <ng-template pTemplate="footer">
                 <div class="flex gap-5 mt-1">
                     <p-button label="Add to cart" class="w-full" styleClass="w-full" />

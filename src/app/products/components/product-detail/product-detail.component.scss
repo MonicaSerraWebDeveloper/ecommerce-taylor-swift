@@ -1,0 +1,61 @@
+@import '../../../../styles/variables'; 
+
+.container-content {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    border: 2px solid red;
+
+    .content-error-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .error-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+    
+            .error-text {
+                font-size: 20px;
+                text-align: center;
+            }
+        }
+
+        .link-container {
+            
+            p {
+                margin: 0;
+            }
+        }
+    }
+
+    .content-product-container {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+
+        .info-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 400px;
+            margin: 0 auto;
+
+            h3 {
+                font-size: 30px;
+                font-weight: 400;
+                color: $text-color;
+                margin: 0;
+            }
+
+            .price-text {
+                font-size: 25px;
+            }
+        }
+    }
+    
+}

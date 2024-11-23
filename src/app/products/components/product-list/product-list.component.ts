@@ -48,25 +48,5 @@ export class ProductListComponent implements OnInit {
                 console.log(error);
             }
         )
-
-        // this.productService.getClothing().subscribe(
-        //     (response) => {
-        //         this.clothingProducts = response
-        //         console.log(response);
-        //     },
-        //     (error) => {
-        //         console.log(error);
-        //     }
-        // )
-
-        // this.productService.getGeneralProducts().subscribe(
-        //     (response) => {
-        //         this.generalProducts = response
-        //         console.log(response);
-        //     },
-        //     (error) => {
-        //         console.log(error);
-        //     }
-        // )
     }
 }

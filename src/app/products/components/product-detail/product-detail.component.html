@@ -1,1 +1,33 @@
-<p>product-detail works!</p>
+<div class="container-content">
+    <div class="content-error-container" *ngIf="errorMessage; else productDetails">
+        <div class="error-container">
+            <i class="pi pi-times" style="font-size: 20px;"></i>
+            <p class="error-text">{{ errorMessage }}</p>
+        </div>
+        <div class="link-container">
+            <a routerLink="/products">Torna a tutti i prodotti</a>
+        </div>
+    </div>
+    
+    <ng-template #productDetails>
+        <div class="content-product-container">
+            <div class="image-container">
+                <img *ngIf="product?.image" [src]="product?.image" [alt]="product?.name">
+            </div>
+            <div class="info-container">
+                <h3>{{ product?.name }}</h3>
+                <small>{{ product?.category }}</small>
+                <p class="price-text">{{ product?.price | currency:'EUR' }}</p>
+                <div *ngIf="product && product?.category === 'Clothes'">
+                    <div *ngFor="let size of product?.sizes | keyvalue">
+                        <label>
+                          <input type="checkbox" [value]="size.key" [name]="size.key">
+                          {{ size.key }}
+                        </label>
+                      </div>
+                </div>
+            </div>
+        </div>
+    </ng-template>
+</div>
+
