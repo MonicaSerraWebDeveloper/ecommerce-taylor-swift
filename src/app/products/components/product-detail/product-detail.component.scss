@@ -4,7 +4,10 @@
     width: 100%;
     max-width: 1280px;
     margin: 0 auto;
-    border: 2px solid red;
+
+    .content-error-container {
+        height: 100vh;
+    }
 
     .image-container {
         width: 50%;
@@ -42,12 +45,13 @@
         flex-direction: row;
         gap: 20px;
 
-        .info-container {
+        .purchase-container {
             display: flex;
             flex-direction: column;
             justify-content: center;
             width: 400px;
             margin: 0 auto;
+            gap: 10px;
 
             h3 {
                 font-size: 30px;
@@ -58,6 +62,71 @@
 
             .price-text {
                 font-size: 25px;
+            }
+
+            .checkbox-container {
+                display: flex;
+                flex-direction: row;
+                gap: 10px;
+
+                /* Nascondi il checkbox */
+                .size-checkbox input[type="checkbox"] {
+                    display: none;
+                }
+                
+                /* Stile del label come pulsante */
+                .size-checkbox label {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    padding: 10px 20px;
+                    background-color: $background-color-light;
+                    border: 2px solid $light-color-cream;   
+                    border-radius: 5px;       
+                    font-size: 16px;
+                    text-align: center;
+                    cursor: pointer;
+                    transition: all 0.3s ease; 
+                }
+
+                .size-checkbox {
+                    width: 100%;
+                }
+                
+                /* Cambia lo stile quando è selezionato */
+                .size-checkbox input[type="checkbox"]:checked + label {
+                    background-color: $background-color-dark;
+                    border-color: $background-color-dark;
+                    color: $background-color-light;
+                  }
+            }
+
+            .action-container {
+                display: flex;
+                flex-direction: row;
+                gap: 10px;
+
+                .quantity {
+                    padding: 10px 20px;
+                    border-radius: 5px; 
+                    background-color: $background-color-light;
+                    border: 2px solid $light-color-cream;
+                }
+
+                .button-addtocart {
+                    flex-grow: 1;
+                    border-radius: 5px; 
+                    background-color: $button-grey;
+                    border: 2px solid $button-grey;
+                    color: $background-color-light;
+                    cursor: pointer;
+
+                    &:hover {
+                        background-color: $background-color-dark;
+                        border: 2px solid $background-color-dark;
+                        color: $background-color-light;
+                    }
+                }
             }
         }
     }

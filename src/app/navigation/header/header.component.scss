@@ -3,3 +3,43 @@
     display: flex;
     justify-content: center; 
 }
+
+.item-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    .single-item-container {
+        display: flex;
+        width: 100%;
+        gap: 10px;
+
+        i {
+            cursor: pointer;
+        }
+    
+        .image-container {
+            width: 30%;
+        }
+    
+        .info-container {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            gap: 5px;
+    
+            h4 {
+                margin: 0;
+            }
+    
+            p {
+                margin: 0;
+            }
+    
+            .quantity-container {
+                display: flex;
+                flex-direction: column;
+            }
+        }
+    }
+}

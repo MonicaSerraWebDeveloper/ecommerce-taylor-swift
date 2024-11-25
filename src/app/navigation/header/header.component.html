@@ -1,3 +1,25 @@
 <div class="card">
     <p-menubar [model]="items" />
 </div>
+<p-sidebar [(visible)]="sidebarVisible2" position="right">
+    <h3>Cart</h3>
+    <div class="item-container">
+        <div *ngFor="let item of cartItem" class="single-item-container">
+            <div class="image-container">
+                <img [src]="item.image" alt="">
+            </div>
+            <div class="info-container">
+                <h4>{{ item.name }}</h4>
+                <p>{{ item.price | currency:'EUR' }}</p>
+                <div class="quantity-container">
+                    <small>Quantity: {{ item.quantity }}</small>
+                    <small>Size: {{ item.size }}</small>
+                </div>
+            </div>
+            <div><i (click)="removeItem(item.id, item.size)" class="pi pi-times" style="font-size: 10px;"></i></div>
+        </div>
+    </div>
+    <!-- <div class="total-container">
+        <p>{{  }}</p>
+    </div> -->
+</p-sidebar>

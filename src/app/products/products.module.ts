@@ -5,6 +5,9 @@ import { ButtonModule } from 'primeng/button';
 import { ProductsRoutingModule } from './products-routing.module';
 import { ProductListComponent } from './components/product-list/product-list.component';
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
+import { FormsModule } from '@angular/forms';
+import { SidebarModule } from 'primeng/sidebar';
+
 
 
 @NgModule({
@@ -16,7 +19,19 @@ import { ProductDetailComponent } from './components/product-detail/product-deta
     CommonModule,
     ProductsRoutingModule,
     CardModule,
-    ButtonModule
+    ButtonModule,
+    FormsModule,
+    SidebarModule
   ]
 })
 export class ProductsModule { }
+
+export class SidebarPositionDemo {
+  sidebarVisible1: boolean = false;
+  
+  sidebarVisible2: boolean = true;
+  
+  sidebarVisible3: boolean = false;
+  
+  sidebarVisible4: boolean = false;
+}

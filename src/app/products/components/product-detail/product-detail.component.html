@@ -14,17 +14,40 @@
             <div class="image-container">
                 <img *ngIf="product?.image" [src]="product?.image" [alt]="product?.name">
             </div>
-            <div class="info-container">
+            <div class="purchase-container">
                 <h3>{{ product?.name }}</h3>
                 <small>{{ product?.category }}</small>
                 <p class="price-text">{{ product?.price | currency:'EUR' }}</p>
-                <div *ngIf="product && product?.category === 'Clothes'">
-                    <div *ngFor="let size of product?.sizes | keyvalue">
-                        <label>
-                          <input type="checkbox" [value]="size.key" [name]="size.key">
-                          {{ size.key }}
-                        </label>
-                      </div>
+                <div class="checkbox-container" *ngIf="product && product?.category === 'Clothes'">
+                    <div class="size-checkbox" *ngFor="let size of product?.sizes | keyvalue">
+                        <input 
+                        [id]="product.name + '-' + size.key" 
+                        type="checkbox" 
+                        [value]="size.key" 
+                        [name]="size.key"
+                        (change)="getSelectedSizes(size.key, $event)"
+                        [disabled]="!isSizeAvailable(size.key)"
+                        >
+                        <label [for]="product.name + '-' + size.key">{{ size.key }}</label>
+                        <p *ngIf="!isSizeAvailable(size.key)">Size unavailable</p>
+                    </div>
+                </div>
+                <div class="action-container">
+                    <div class="quantity-container">
+                        <label [for]="product?.name + '-' + product?.id"></label>
+                        <input 
+                            class="quantity"
+                            [id]="product?.name + '-' + product?.id" 
+                            type="number" 
+                            min="1" 
+                            max="{{ product?.stock || 99 }}" 
+                            [(ngModel)]="selectedQuantity"
+                            >
+                    </div>
+                    <button (click)="addToCart()" class="button-addtocart">Add to cart</button>
+                </div>
+                <div class="info-contaienr">
+                    <p>{{ product?.description }}</p>
                 </div>
             </div>
         </div>
