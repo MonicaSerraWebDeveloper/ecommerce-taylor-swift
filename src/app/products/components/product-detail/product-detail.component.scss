@@ -64,18 +64,18 @@
                 font-size: 25px;
             }
 
-            .checkbox-container {
+            .radio-container {
                 display: flex;
                 flex-direction: row;
                 gap: 10px;
 
-                /* Nascondi il checkbox */
-                .size-checkbox input[type="checkbox"] {
+                /* Nascondi il radio */
+                .size-radio input[type="radio"] {
                     display: none;
                 }
                 
                 /* Stile del label come pulsante */
-                .size-checkbox label {
+                .size-radio label {
                     display: flex;
                     justify-content: center;
                     align-items: center;
@@ -89,12 +89,12 @@
                     transition: all 0.3s ease; 
                 }
 
-                .size-checkbox {
+                .size-radio {
                     width: 100%;
                 }
                 
                 /* Cambia lo stile quando è selezionato */
-                .size-checkbox input[type="checkbox"]:checked + label {
+                .size-radio input[type="radio"]:checked + label {
                     background-color: $background-color-dark;
                     border-color: $background-color-dark;
                     color: $background-color-light;
@@ -125,6 +125,17 @@
                         background-color: $background-color-dark;
                         border: 2px solid $background-color-dark;
                         color: $background-color-light;
+                    }
+
+                    &:disabled {
+                        background-color: #cccccc; /* Colore grigio per indicare disabilitato */
+                        color: #666666; /* Testo più tenue */
+                        cursor: not-allowed; /* Icona per indicare che non è cliccabile */
+                    }
+                    
+                    /* Rimuove l'effetto hover per il pulsante disabilitato */
+                   &:disabled:hover {
+                        background-color: #cccccc; /* Mantiene il colore del pulsante disabilitato */
                     }
                 }
             }

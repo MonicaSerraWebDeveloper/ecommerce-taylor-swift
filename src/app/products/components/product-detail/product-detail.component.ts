@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ProductService } from '../../services/product.service';
+import { CartService } from '../../../cart/cart.service';
 
 @Component({
   selector: 'app-product-detail',
@@ -15,30 +16,34 @@ export class ProductDetailComponent implements OnInit {
     selectedQuantity: number = 1;
     selectedSizes: string[] = [];
     cartItems: any[] = [];
-    
+        
     constructor(
         private route: ActivatedRoute,
         private productService: ProductService,
+        private cartService: CartService
     ) {}
     
     ngOnInit(): void {
+        // passiamo il parametro 'id' del prodotto alla rotta della pagina dettaglio dei prodotti
         const id = this.route.snapshot.paramMap.get('id')
+        this.cartService.cart$.subscribe((cart) => {
+            this.cartItems = cart;
+            console.log('Carrello aggiornato:', this.cartItems);
+        });
 
         if(id !== null && !isNaN(Number(id))) {
             this.personId = Number(id);
-            
-
+            // verifichiamo che l'id scritto nell'URL esista, gestiamo in caso il prodotto id non esista di restituire all'utente un avviso che il prodotto non è stato trovato
             this.productService.productExist(this.personId).subscribe((exist) => {
                 if(exist) {
-                    console.log('ID valid:', exist);
                     this.product = this.productService.getProductById(this.personId).subscribe(
                         (product) => {
                             this.product = product
                         });
                 } else {
                     this.invalidProduct()
-                }
-            })
+                };
+            });
         } else {
             this.invalidProduct()
         } 
@@ -56,19 +61,17 @@ export class ProductDetailComponent implements OnInit {
         } else {
             this.selectedSizes = this.selectedSizes.filter((s) => s !== size)
         }
-        console.log(this.selectedSizes);
-    }
+    };
 
     addToCart() {
         if (!this.product) return;
-
-        const cart = JSON.parse(localStorage.getItem('cart') || '[]');
 
         if(this.product.category === 'Clothes') {
             this.selectedSizes.forEach((size) => {
                 
                 const quantityAvailable = this.product.sizes[size]
-
+                
+                // prepariamo l'oggetto da aggiungere all'array del carrello
                 if(quantityAvailable >= this.selectedQuantity) {
                     const cartItem = {
                         id: this.product.id,
@@ -80,16 +83,10 @@ export class ProductDetailComponent implements OnInit {
                         quantity: this.selectedQuantity,
                     }
 
-                    const existingItemIndex = cart.findIndex((item: any) => {
-                        item.id === this.product.id && item.size === size
-                    });
-    
-                    if (existingItemIndex > -1) {
-                        cart[existingItemIndex].quantity += this.selectedQuantity
-                    } else {
-                        cart.push(cartItem)
-                    }
                     this.product.sizes[size] -= this.selectedQuantity;
+
+                    this.cartService.addToCart(cartItem)
+
                 } else {
                     console.error(`Taglia ${size} non disponibile in quantità sufficiente.`);
                 }
@@ -105,28 +102,21 @@ export class ProductDetailComponent implements OnInit {
                 image: this.product.image,
                 quantity: this.selectedQuantity,
             };
-    
-            const existingItemIndex = cart.findIndex((item: any) => item.id === this.product.id);
-    
-            if (existingItemIndex > -1) {
-                cart[existingItemIndex].quantity += this.selectedQuantity;
-            } else {
-                cart.push(cartItem);
-            }
-        }
 
-        localStorage.setItem('cart', JSON.stringify(cart))
-        this.updateCartView()
-    }
+            this.cartService.addToCart(cartItem)
+        }
+    };
 
     isSizeAvailable(size: any): boolean {
         return this.product.sizes[size] > 0;  
-    }
+    };
 
-    updateCartView() {
-        const cart = JSON.parse(localStorage.getItem('cart') || '[]');
-        this.cartItems = cart;
+    isSizeChecked(): boolean {
+        if(this.product.category === 'Clothes') {
+            return this.selectedSizes.length > 0;
+        } else {
+            return true
+        }
     }
-
 }
 

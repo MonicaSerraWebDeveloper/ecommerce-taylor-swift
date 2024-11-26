@@ -1,16 +1,22 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { CartService } from '../../cart/cart.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit, OnDestroy {
     items: any[] = [];
     sidebarVisible2: boolean = false;
     cartItem: any[] = [];
+    cartSubscription!: Subscription;
+
+  constructor(private cartService: CartService) {}
 
   ngOnInit(): void {
+
       this.items = [        
       {
         label: 'Home',
@@ -33,33 +39,31 @@ export class HeaderComponent {
         routerLink: '/admin'
       }
     ]
-    console.log(this.cartItem);
-    
-    this.loadCart()
-
+    this.cartSubscription = this.cartService.cart$.subscribe((cart) => {
+      this.cartItem = cart;
+      console.log('Carrello aggiornato:', this.cartItem);
+    });
   }
 
-  loadCart(): void {
-    const storedCart = localStorage.getItem('cart');
-    this.cartItem =  storedCart ? JSON.parse(storedCart) : [];
+  ngOnDestroy() {
+    // Pulire la sottoscrizione quando il componente viene distrutto
+    if (this.cartSubscription) {
+      this.cartSubscription.unsubscribe();
+    }
   }
-
   toggleSidebar(): void {
     this.sidebarVisible2 = !this.sidebarVisible2;
   }
 
+  getTotalQuantity(): number {
+    return this.cartItem.reduce((total, item) => total + item.quantity, 0);
+  }
+
+  getTotalPrice(): number {
+      return this.cartItem.reduce((total, item) => total + item.quantity * item.price, 0);
+  }
+
   removeItem(id: any, size?: string) {
-    const cart = JSON.parse(localStorage.getItem('cart') || '[]')
-
-    const indexItem = cart.findIndex(
-      (item: any) => item.id === id && (!size || item.size === size )
-    )
-
-    if(indexItem > -1) {
-      cart.splice(indexItem, 1)
-      localStorage.setItem('cart', JSON.stringify(cart))
-    }
-
-    this.cartItem = cart
+    this.cartService.removeToCart(id);
   }
 }

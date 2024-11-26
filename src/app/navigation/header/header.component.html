@@ -19,7 +19,14 @@
             <div><i (click)="removeItem(item.id, item.size)" class="pi pi-times" style="font-size: 10px;"></i></div>
         </div>
     </div>
-    <!-- <div class="total-container">
-        <p>{{  }}</p>
-    </div> -->
+    <div class="total-container">
+        <div class="text-container">
+            <p>Quantity:</p>
+            <p>Total: </p>
+        </div>
+        <div class="number-container">
+            <p>{{ getTotalQuantity() }}</p>
+            <p>{{ getTotalPrice() | currency:'EUR' }}</p>
+        </div>
+    </div>
 </p-sidebar>
