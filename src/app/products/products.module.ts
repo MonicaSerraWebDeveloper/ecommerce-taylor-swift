@@ -27,11 +27,5 @@ import { SidebarModule } from 'primeng/sidebar';
 export class ProductsModule { }
 
 export class SidebarPositionDemo {
-  sidebarVisible1: boolean = false;
-  
-  sidebarVisible2: boolean = true;
-  
-  sidebarVisible3: boolean = false;
-  
-  sidebarVisible4: boolean = false;
+
 }

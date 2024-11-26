@@ -41,7 +41,6 @@ export class HeaderComponent implements OnInit, OnDestroy {
     ]
     this.cartSubscription = this.cartService.cart$.subscribe((cart) => {
       this.cartItem = cart;
-      console.log('Carrello aggiornato:', this.cartItem);
     });
   }
 
@@ -63,7 +62,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
       return this.cartItem.reduce((total, item) => total + item.quantity * item.price, 0);
   }
 
-  removeItem(id: any, size?: string) {
-    this.cartService.removeToCart(id);
+  removeItem(id: any, size?: any) {
+    this.cartService.removeToCart(id, size);
   }
 }

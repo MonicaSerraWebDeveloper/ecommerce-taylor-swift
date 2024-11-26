@@ -41,6 +41,13 @@ export class ProductService {
         )
     }
 
+    getProductLocalStorageById(productId: number): any {
+        const products = JSON.parse(localStorage.getItem('cart') || '[]');
+        console.log(products);
+        
+        return products.find((product: { id: any; }) => product.id === productId);
+    }
+
 }
 
 

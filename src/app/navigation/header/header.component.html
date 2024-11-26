@@ -13,7 +13,7 @@
                 <p>{{ item.price | currency:'EUR' }}</p>
                 <div class="quantity-container">
                     <small>Quantity: {{ item.quantity }}</small>
-                    <small>Size: {{ item.size }}</small>
+                    <small *ngIf="item.size">Size: {{ item.size }}</small>
                 </div>
             </div>
             <div><i (click)="removeItem(item.id, item.size)" class="pi pi-times" style="font-size: 10px;"></i></div>

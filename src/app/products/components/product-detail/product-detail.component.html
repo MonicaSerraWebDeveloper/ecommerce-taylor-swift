@@ -40,11 +40,11 @@
                             [id]="product?.name + '-' + product?.id" 
                             type="number" 
                             min="1" 
-                            max="{{ product?.stock || product?.sizes }}"
+                            max="{{ product?.stock || product?.sizes[selectedSizes] }}"
                             [(ngModel)]="selectedQuantity"
                             >
                     </div>
-                    <button (click)="addToCart()" class="button-addtocart" [disabled]="!isSizeChecked()">Add to cart</button>
+                    <button (click)="addToCart()" class="button-addtocart" [disabled]="isSizeChecked()">Add to cart</button>
                 </div>
                 <div class="info-contaienr">
                     <p>{{ product?.description }}</p>

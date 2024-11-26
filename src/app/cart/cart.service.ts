@@ -11,7 +11,7 @@ export class CartService {
 
     constructor() { }
 
-    private loadCart(): any[] {
+    loadCart(): any[] {
     return JSON.parse(localStorage.getItem('cart') || '[]')
     }
 
@@ -43,14 +43,13 @@ export class CartService {
         this.updateCart(cart)
     }
 
-    removeToCart(productId: any) {
-        let cart = this.loadCart();
-        cart = cart.filter(item => item.id !== productId)
+    removeToCart(productId: any, productSize: any) {
+        let cart = this.loadCart();        
+        cart = cart.filter(item => !(item.id === productId && item.size === productSize))
         this.updateCart(cart)
     }
 
     private updateCart(cart: any[]) {
-        console.log('Aggiornamento carrello:', cart);
         localStorage.setItem('cart', JSON.stringify(cart))
         this.cartSubject.next(cart)
     }
