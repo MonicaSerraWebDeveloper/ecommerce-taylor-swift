@@ -33,15 +33,13 @@ export class ProductDetailComponent implements OnInit {
             this.cartService.cart$.subscribe((cart) => {
                 this.cartItems = cart;
             });
-
+            
             // verifichiamo che l'id scritto nell'URL esista, gestiamo in caso il prodotto id non esista di restituire all'utente un avviso che il prodotto non è stato trovato
             this.productService.productExist(this.personId).subscribe((exist) => {
                 if(exist) {
                     this.product = this.productService.getProductById(this.personId).subscribe(
                         (product) => {
                             this.product = product
-
-                            // this.syncProductQuantityWithCart()
                         });
                 } else {
                     this.invalidProduct()
@@ -55,21 +53,6 @@ export class ProductDetailComponent implements OnInit {
     invalidProduct() {
         this.errorMessage = 'Il prodotto cercato non esite'
     }
-
-    // syncProductQuantityWithCart() {
-    //     const cart = this.cartService.loadCart()
-
-    //     cart.forEach(cartItem => {
-    //         if(cartItem.id === this.product.id && cartItem.size) {
-    //             const product = this.productService.getProductLocalStorageById(cartItem.id)
-                
-    //             if(product) {
-    //                 product.sizes[cartItem.size] -= cartItem.quantity
-    //             }
-
-    //         }
-    //     })
-    // }
 
     // creiamo un metodo per l'interazione dell'utente con il checkbox delle sizes così da salvare le taglie selezionate in un array
     getSelectedSizes(size: any, event: Event): void {
