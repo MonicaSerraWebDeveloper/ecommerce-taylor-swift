@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ProductService } from '../../services/product.service';
 import { CartService } from '../../../cart/cart.service';
+import { forkJoin } from 'rxjs';
 
 @Component({
   selector: 'app-product-detail',
@@ -16,6 +17,7 @@ export class ProductDetailComponent implements OnInit {
     selectedQuantity: number = 1;
     selectedSizes: string = '';
     cartItems: any[] = [];
+    sizeNotFound: string = '' 
         
     constructor(
         private route: ActivatedRoute,
@@ -26,21 +28,25 @@ export class ProductDetailComponent implements OnInit {
     ngOnInit(): void {
         // passiamo il parametro 'id' del prodotto alla rotta della pagina dettaglio dei prodotti
         const id = this.route.snapshot.paramMap.get('id')
-
+        
         if(id !== null && !isNaN(Number(id))) {
             this.personId = Number(id);
 
             this.cartService.cart$.subscribe((cart) => {
-                this.cartItems = cart;
-            });
-            
+                this.cartItems = cart
+            });  
+
             // verifichiamo che l'id scritto nell'URL esista, gestiamo in caso il prodotto id non esista di restituire all'utente un avviso che il prodotto non è stato trovato
             this.productService.productExist(this.personId).subscribe((exist) => {
                 if(exist) {
                     this.product = this.productService.getProductById(this.personId).subscribe(
                         (product) => {
-                            this.product = product
+                            this.product = product    
+
+                            this.syncProductQuantityWithCart()
+
                         });
+                       
                 } else {
                     this.invalidProduct()
                 };
@@ -49,6 +55,31 @@ export class ProductDetailComponent implements OnInit {
             this.invalidProduct()
         } 
     }
+
+    syncProductQuantityWithCart(): void { 
+        if (!this.product) return; 
+        // Ottieni gli articoli del carrello 
+        const cartItems = this.cartService.loadCart(); 
+        // Duplica il prodotto per lavorarci sopra 
+        const updatedProduct = { ...this.product }; 
+        // Cerca il prodotto corrente nel carrello 
+        cartItems.forEach((cartItem) => { 
+            if (cartItem.id === this.product.id) { 
+                if (this.product.category === 'Clothes') 
+                    { updatedProduct.sizes[cartItem.size] -= cartItem.quantity; 
+                        console.log('update Product size', updatedProduct.sizes[cartItem.size], updatedProduct.name); 
+                        console.log('Product size', this.product.sizes[cartItem.size], this.product); 
+                    } else { 
+                        updatedProduct.stock -= cartItem.quantity; 
+                    } 
+                } 
+            }); 
+            // Aggiorna il prodotto nel localStorage 
+            this.productService.updateProductInLocalStorage(updatedProduct); 
+            // Aggiorna il prodotto nel componente 
+            this.product = updatedProduct;
+    }
+
     // un messaggio da dare all'utente per la gestione dei prodotti che non esistono
     invalidProduct() {
         this.errorMessage = 'Il prodotto cercato non esite'
@@ -67,7 +98,6 @@ export class ProductDetailComponent implements OnInit {
 
         if(this.product.category === 'Clothes') {
            
-                
             const quantityAvailable = this.product.sizes[this.selectedSizes]
             
             // prepariamo l'oggetto da aggiungere all'array del carrello
@@ -83,11 +113,14 @@ export class ProductDetailComponent implements OnInit {
                 }
 
                 this.product.sizes[this.selectedSizes] -= this.selectedQuantity;
+                this.productService.updateProductInLocalStorage(this.product);
 
                 this.cartService.addToCart(cartItem)
                 this.selectedSizes = ''
 
             } else {
+                const invalidSize = `Taglia ${this.selectedSizes} non disponibile in quantità sufficiente.`
+                this.sizeNotFound = invalidSize
                 console.error(`Taglia ${this.selectedSizes} non disponibile in quantità sufficiente.`);
             }
 
@@ -103,6 +136,9 @@ export class ProductDetailComponent implements OnInit {
                 quantity: this.selectedQuantity,
             };
 
+            this.product.stock -= this.selectedQuantity;
+            this.productService.updateProductInLocalStorage(this.product);            
+
             this.cartService.addToCart(cartItem)
         }
     };
@@ -111,12 +147,18 @@ export class ProductDetailComponent implements OnInit {
         return this.product.sizes[size] > 0;  
     };
 
-    isSizeChecked(): boolean {
-        if(this.product?.category === 'Clothes') {
-            return !this.selectedSizes;
-        } else {
-            return false
-        }
+    isStockAvailable(): boolean {
+        return (this.product?.stock ?? 0) > 0;
     }
+
+    isButtonDisabled(): boolean {
+        if (this.product?.category === 'Clothes') {
+            // Disabilita se non è selezionata una taglia
+            return !this.selectedSizes || this.product.sizes[this.selectedSizes] <= 0;
+        } else {
+            // Per "General", disabilita se lo stock è zero
+            return this.product?.stock <= 0;
+        }
+    }    
 }
 

@@ -1,4 +1,5 @@
 <div class="products-container">
+    <p *ngFor="let item of cartItems">{{ item.name }}</p>
     <div class="card flex flex-wrap gap-3 justify-content-start">
         <p-card *ngFor="let product of allProducts" class="flex" [style]="{ width: '300px' }">
             <div [routerLink]="['/products', product.id]">
@@ -9,6 +10,7 @@
                 <h3>
                     {{ product.name }}
                 </h3>
+                <p *ngIf="product.category === 'General'">{{ product?.stock }}</p>
             </div>
             <ng-template pTemplate="footer">
                 <div class="flex gap-5 mt-1">

@@ -3,6 +3,7 @@ import { ProductService } from '../../services/product.service';
 import { ClothingProduct } from '../../models/clothing-products.model';
 import { GeneralProducts } from '../../models/general-products.model';
 import { forkJoin } from 'rxjs';
+import { CartService } from '../../../cart/cart.service';
 
 @Component({
   selector: 'app-product-list',
@@ -12,11 +13,15 @@ import { forkJoin } from 'rxjs';
 export class ProductListComponent implements OnInit {
     
     allProducts: any[] = [];
+    cartItems: any[] = []
 
     clothingProducts: ClothingProduct[] = [];
     generalProducts: GeneralProducts[] = [];
 
-    constructor(private productService: ProductService) {}
+    constructor(
+        private productService: ProductService,
+        private cartService: CartService
+    ) {}
     
     ngOnInit(): void {
         
@@ -41,12 +46,19 @@ export class ProductListComponent implements OnInit {
                         sizes: undefined,     // setta sizes come undefined per i prodotti General
                         stock: product.stock  // mantieni il campo stock per i prodotti General
                     }))
-                ];
-                console.log(this.allProducts);
+                ];                  
             },
             (error) => {
                 console.log(error);
             }
         )
+        
+        this.cartService.cart$.subscribe((cart) => {
+            this.cartItems = cart;
+            console.log(this.cartItems);
+            
+          });
+
     }
+
 }

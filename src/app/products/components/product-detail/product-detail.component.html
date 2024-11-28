@@ -32,6 +32,9 @@
                         <p *ngIf="!isSizeAvailable(size.key)">Size unavailable</p>
                     </div>
                 </div>
+                <p *ngIf="product?.category === 'General' && !isStockAvailable()">Out of stock</p>
+                <p *ngIf="sizeNotFound">{{ sizeNotFound }}</p>
+
                 <div class="action-container">
                     <div class="quantity-container">
                         <label [for]="product?.name + '-' + product?.id"></label>
@@ -40,11 +43,11 @@
                             [id]="product?.name + '-' + product?.id" 
                             type="number" 
                             min="1" 
-                            max="{{ product?.stock || (product?.size && product?.sizes[selectedSizes]) }}"
+                            max="{{ product?.stock || product?.sizes?.[selectedSizes] || 0 }}"
                             [(ngModel)]="selectedQuantity"
                             >
                     </div>
-                    <button (click)="addToCart()" class="button-addtocart" [disabled]="isSizeChecked()">Add to cart</button>
+                    <button (click)="addToCart()" class="button-addtocart" [disabled]="isButtonDisabled()">Add to cart</button>
                 </div>
                 <div class="info-contaienr">
                     <p>{{ product?.description }}</p>
@@ -52,5 +55,12 @@
             </div>
         </div>
     </ng-template>
+    <div>
+        <ul>
+            <li *ngFor="let item of cartItems">{{ item.name}} - number: {{ item.quantity }}</li>
+        </ul>
+        <p>{{ product?.stock }}</p>
+        <p>{{ product?.sizes?.[selectedSizes] }}</p>
+    </div>
 </div>
 

@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, findIndex } from 'rxjs';
+import { ProductService } from '../products/services/product.service';
 
 @Injectable({
   providedIn: 'root'
@@ -8,11 +9,13 @@ export class CartService {
 
     private cartSubject = new BehaviorSubject<any[]>(this.loadCart());
     cart$ = this.cartSubject.asObservable();
-
-    constructor() { }
+    
+    constructor(
+        private productService: ProductService
+    ) { }
 
     loadCart(): any[] {
-    return JSON.parse(localStorage.getItem('cart') || '[]')
+        return JSON.parse(localStorage.getItem('cart') || '[]')
     }
 
     addToCart(product: any) {
@@ -28,6 +31,7 @@ export class CartService {
             } else {
                 cart.push(product)
             }
+
         } else {
             const existingItemIndex = cart.findIndex((item: any) => 
                 item.id === product.id
