@@ -5,6 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './navigation/header/header.component';
 import { FooterComponent } from './navigation/footer/footer.component';
+import { CartModule } from './cart/cart.module';
 import { MenubarModule } from 'primeng/menubar';
 import { CardModule } from 'primeng/card';
 import { ButtonModule } from 'primeng/button';
@@ -12,6 +13,7 @@ import { FormsModule } from '@angular/forms';
 import { SidebarModule } from 'primeng/sidebar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
+import { BadgeModule } from 'primeng/badge';
 
 
 @NgModule({
@@ -19,7 +21,6 @@ import { RouterModule } from '@angular/router';
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    
   ],
   imports: [
     BrowserModule,
@@ -31,7 +32,9 @@ import { RouterModule } from '@angular/router';
     ButtonModule,
     FormsModule,
     SidebarModule,
-    RouterModule
+    RouterModule,
+    BadgeModule,
+    CartModule
   ],
   providers: [],
   bootstrap: [AppComponent]

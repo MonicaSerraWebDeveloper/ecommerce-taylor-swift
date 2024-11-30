@@ -86,6 +86,8 @@
         background-color: $background-color-light;
         border: 2px solid $background-color-light;
         color: $button-grey;
+        text-transform: uppercase;
+        font-family:'Times New Roman', Times, serif;
         cursor: pointer;
     }
 
@@ -96,6 +98,8 @@
         background-color: $button-grey;
         border: 2px solid $button-grey;
         color: $background-color-light;
+        text-transform: uppercase;
+        font-family:'Times New Roman', Times, serif;
         cursor: pointer;
     }
 }

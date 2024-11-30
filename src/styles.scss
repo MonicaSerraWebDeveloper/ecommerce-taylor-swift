@@ -12,3 +12,38 @@ body {
 img {
     max-width: 100%;
 }
+
+.cart-badge {
+    background-color: $background-color-dark;
+    padding: 5px 9px;
+    border-radius: 100%;
+    margin: 5px;
+    color: white;
+    font-size: 12px;
+}
+
+.button-light {
+    width: 100%;
+    width: 100%;
+    padding: 10px 20px;
+    border-radius: 5px; 
+    background-color: white;
+    border: 2px solid white;
+    text-transform: uppercase;
+    color: $button-grey;
+    font-family:'Times New Roman', Times, serif;
+    cursor: pointer;
+}
+
+.button-dark {
+    padding: 10px 20px;
+    width: 100%;
+    border-radius: 5px; 
+    background-color: $button-grey;
+    border: 2px solid $button-grey;
+    text-transform: uppercase;
+    font-family:'Times New Roman', Times, serif;
+    color: $background-color-light;
+    cursor: pointer;
+}
+

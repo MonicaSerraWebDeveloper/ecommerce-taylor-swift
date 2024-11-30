@@ -1,13 +1,14 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
 import { CartService } from '../../cart/cart.service';
 import { Subscription } from 'rxjs';
 import { ProductService } from '../../products/services/product.service';
 import { Router } from '@angular/router';
+import { BadgeModule } from 'primeng/badge';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrl: './header.component.scss'
+  styleUrl: './header.component.scss',
 })
 export class HeaderComponent implements OnInit, OnDestroy {
     items: any[] = [];
@@ -28,6 +29,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
       this.cartService.cart$.subscribe((cart) => {
         this.cartItems = cart;
         this.calculateTotals();
+        this.updateCartMenuItem()
       });
 
       this.items = [        
@@ -44,7 +46,9 @@ export class HeaderComponent implements OnInit, OnDestroy {
       {
         label: 'Cart',
         icon: 'pi pi-cart-arrow-down',
-        command: () => this.toggleSidebar()
+        command: () => this.toggleSidebar(),
+        badge: this.cartItems.length > 0 ? this.cartItems.length.toString() : '',
+        badgeStyleClass: this.cartItems.length > 0 ? 'badge cart-badge' : ''
       },
       {
         label: 'Admin',
@@ -60,6 +64,20 @@ export class HeaderComponent implements OnInit, OnDestroy {
       this.cartSubscription.unsubscribe();
     }
   }
+
+  updateCartMenuItem() {
+    const cartMenuItem = this.items.find(item => item.label === 'Cart');
+      if (cartMenuItem) {
+        const badgeValue = this.cartItems.length > 0 ? this.cartItems.length.toString() : '';
+        const badgeClass = this.cartItems.length > 0 ? 'badge cart-badge' : ''; 
+        
+        cartMenuItem.badge = badgeValue;
+        cartMenuItem.badgeStyleClass = badgeClass;
+        
+        this.items = [...this.items]; 
+      }
+  }
+
   toggleSidebar(): void {
     this.sidebarVisible2 = !this.sidebarVisible2;
   }
