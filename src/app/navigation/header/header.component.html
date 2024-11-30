@@ -1,32 +1,43 @@
+<!-- header menu -->
 <div class="card">
     <p-menubar [model]="items" />
 </div>
+<!-- sidebar preview cart -->
 <p-sidebar [(visible)]="sidebarVisible2" position="right">
-    <h3>Cart</h3>
-    <div class="item-container">
-        <div *ngFor="let item of cartItems" class="single-item-container">
-            <div class="image-container">
-                <img [src]="item.image" alt="">
-            </div>
-            <div class="info-container">
-                <h4>{{ item.name }}</h4>
-                <p>{{ item.price | currency:'EUR' }}</p>
-                <div class="quantity-container">
-                    <small>Quantity: {{ item.quantity }}</small>
-                    <small *ngIf="item.size">Size: {{ item.size }}</small>
+    <div *ngIf="cartItems && cartItems.length === 0; else cartHasItems">
+        <p>No items add to cart</p>
+    </div>
+    <ng-template #cartHasItems>
+        <div class="item-container">
+            <h3>Cart</h3>
+            <div *ngFor="let item of cartItems" class="single-item-container">
+                <div class="image-container">
+                    <img [src]="item.image" alt="">
                 </div>
+                <div class="info-container">
+                    <h4>{{ item.name }}</h4>
+                    <p>{{ item.price | currency:'EUR' }}</p>
+                    <div class="quantity-container">
+                        <small>Quantity: {{ item.quantity }}</small>
+                        <small *ngIf="item.size">Size: {{ item.size }}</small>
+                    </div>
+                </div>
+                <div><i (click)="removeItem(item.id, item.size)" class="pi pi-times" style="font-size: 10px;"></i></div>
             </div>
-            <div><i (click)="removeItem(item.id, item.size)" class="pi pi-times" style="font-size: 10px;"></i></div>
         </div>
-    </div>
-    <div class="total-container">
-        <div class="text-container">
-            <p>Quantity:</p>
-            <p>Total: </p>
+        <div class="total-container">
+            <div class="text-container">
+                <p>Quantity:</p>
+                <p>Total: </p>
+            </div>
+            <div class="number-container">
+                <p>{{ getTotalQuantity() }}</p>
+                <p>{{ getTotalPrice() | currency:'EUR' }}</p>
+            </div>
         </div>
-        <div class="number-container">
-            <p>{{ getTotalQuantity() }}</p>
-            <p>{{ getTotalPrice() | currency:'EUR' }}</p>
+        <div class="button-container">
+            <button (click)="clearCart()" class="clear-button">Clear All</button>
+            <button (click)="goToCart()" class="go-cart">Go To Cart</button>
         </div>
-    </div>
+    </ng-template>
 </p-sidebar>

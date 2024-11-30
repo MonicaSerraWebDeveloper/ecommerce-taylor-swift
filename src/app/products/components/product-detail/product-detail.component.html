@@ -32,7 +32,7 @@
                         <p *ngIf="!isSizeAvailable(size.key)">Size unavailable</p>
                     </div>
                 </div>
-                <p *ngIf="product?.category === 'General' && !isStockAvailable()">Out of stock</p>
+                <p *ngIf="!isStockAvailable()">Out of stock</p>
                 <p *ngIf="sizeNotFound">{{ sizeNotFound }}</p>
 
                 <div class="action-container">

@@ -11,6 +11,7 @@ import { ButtonModule } from 'primeng/button';
 import { FormsModule } from '@angular/forms';
 import { SidebarModule } from 'primeng/sidebar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     CardModule,
     ButtonModule,
     FormsModule,
-    SidebarModule
+    SidebarModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]

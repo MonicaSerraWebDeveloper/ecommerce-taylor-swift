@@ -13,7 +13,6 @@ import { CartService } from '../../../cart/cart.service';
 export class ProductListComponent implements OnInit {
     
     allProducts: any[] = [];
-    cartItems: any[] = []
 
     clothingProducts: ClothingProduct[] = [];
     generalProducts: GeneralProducts[] = [];
@@ -52,12 +51,6 @@ export class ProductListComponent implements OnInit {
                 console.log(error);
             }
         )
-        
-        this.cartService.cart$.subscribe((cart) => {
-            this.cartItems = cart;
-            console.log(this.cartItems);
-            
-          });
 
     }
 

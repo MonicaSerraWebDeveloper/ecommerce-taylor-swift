@@ -65,19 +65,17 @@ export class ProductDetailComponent implements OnInit {
         // Cerca il prodotto corrente nel carrello 
         cartItems.forEach((cartItem) => { 
             if (cartItem.id === this.product.id) { 
-                if (this.product.category === 'Clothes') 
-                    { updatedProduct.sizes[cartItem.size] -= cartItem.quantity; 
-                        console.log('update Product size', updatedProduct.sizes[cartItem.size], updatedProduct.name); 
-                        console.log('Product size', this.product.sizes[cartItem.size], this.product); 
-                    } else { 
-                        updatedProduct.stock -= cartItem.quantity; 
-                    } 
+                if (this.product.category === 'Clothes') { 
+                    updatedProduct.sizes[cartItem.size] -= cartItem.quantity; 
+                } else { 
+                    updatedProduct.stock -= cartItem.quantity; 
                 } 
-            }); 
-            // Aggiorna il prodotto nel localStorage 
-            this.productService.updateProductInLocalStorage(updatedProduct); 
-            // Aggiorna il prodotto nel componente 
-            this.product = updatedProduct;
+            } 
+        }); 
+        // Aggiorna il prodotto nel localStorage 
+        this.productService.updateProductInLocalStorage(updatedProduct); 
+        // Aggiorna il prodotto nel componente 
+        this.product = updatedProduct;
     }
 
     // un messaggio da dare all'utente per la gestione dei prodotti che non esistono
@@ -148,7 +146,11 @@ export class ProductDetailComponent implements OnInit {
     };
 
     isStockAvailable(): boolean {
-        return (this.product?.stock ?? 0) > 0;
+        if(this.product?.category !== 'Clothes' && this.product?.stock === 0) {
+            return false;
+        } else {
+            return true
+        }
     }
 
     isButtonDisabled(): boolean {

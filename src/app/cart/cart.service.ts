@@ -18,6 +18,11 @@ export class CartService {
         return JSON.parse(localStorage.getItem('cart') || '[]')
     }
 
+    clearCart() {
+        this.cartSubject.next([])
+        localStorage.setItem('cart', JSON.stringify([]))
+    }
+
     addToCart(product: any) {
         const cart = this.loadCart()
         

@@ -2,6 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { CartService } from '../../cart/cart.service';
 import { Subscription } from 'rxjs';
 import { ProductService } from '../../products/services/product.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -18,12 +19,11 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   constructor(
     private cartService: CartService,
+    private router: Router,
     private productService: ProductService
   ) {}
 
   ngOnInit(): void {
-
-
       // Osserva il carrello e calcola il totale
       this.cartService.cart$.subscribe((cart) => {
         this.cartItems = cart;
@@ -77,40 +77,16 @@ export class HeaderComponent implements OnInit, OnDestroy {
     this.totalQuantity = this.getTotalQuantity();
   }
 
-  // syncProductQuantities(): void {
-  //   this.cartService.cart$.subscribe((cart) => {
-  //     // Aggiungi un flag per sapere se c'è stato un cambiamento
-  //     let isProductUpdated = false;
-
-  //     cart.forEach((item) => {
-  //         this.productService.getProductLocalStorageById(item.id).subscribe((productLocalStorage) => {
-  //             if (productLocalStorage) {
-  //                 if (productLocalStorage.category === 'Clothes') {
-  //                     // Per i prodotti "Clothes", decrementa la quantità della taglia
-  //                     productLocalStorage.sizes[item.size] -= item.quantity;
-
-  //                 } else {
-  //                     // Per i prodotti generali, decrementa lo stock
-  //                     productLocalStorage.stock -= item.quantity;
-  //                 }
-
-  //                 // Segna come aggiornato il prodotto
-  //                 this.productService.updateProductInLocalStorage(productLocalStorage);
-  //                 isProductUpdated = true;
-  //             }
-  //         });
-  //     });
-
-  //     // Se c'è stato un aggiornamento, fai un altro log
-  //     if (isProductUpdated) {
-  //         console.log('Product quantities were successfully updated in localStorage.');
-  //     } else {
-  //         console.log('No products were updated.');
-  //     }
-  // });
-  // }
-
   removeItem(id: number, size?: any): void {
     this.cartService.removeToCart(id, size);
+  }
+
+  goToCart() {
+      this.sidebarVisible2 = false
+      this.router.navigate(['/cart'])
+  }
+
+  clearCart() {
+    this.cartService.clearCart()
   }
 }

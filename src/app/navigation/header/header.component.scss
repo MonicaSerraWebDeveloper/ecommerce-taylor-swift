@@ -1,3 +1,5 @@
+@import '../../../styles/variables';
+
 /* Centrare gli items nel menubar */
 .p-element {
     display: flex;
@@ -43,7 +45,7 @@
                 flex-direction: column;
             }
         }
-    }
+    } 
 }
 
 .total-container {
@@ -51,7 +53,9 @@
     flex-direction: column;
     width: 100%;
     margin-top: 20px;
+    margin-bottom: 20px;
     padding-top: 10px;
+    padding-bottom: 10px;
     border-top: 2px solid #000;
 
     p {
@@ -68,3 +72,33 @@
         justify-content: space-between;
     }
 }
+
+.button-container {
+    display: flex;
+    width: 100%;
+    gap: 10px;
+
+    .clear-button{
+        width: 100%;
+        width: 100%;
+        padding: 10px 20px;
+        border-radius: 5px; 
+        background-color: $background-color-light;
+        border: 2px solid $background-color-light;
+        color: $button-grey;
+        cursor: pointer;
+    }
+
+    .go-cart {
+        width: 100%;
+        padding: 10px 20px;
+        border-radius: 5px; 
+        background-color: $button-grey;
+        border: 2px solid $button-grey;
+        color: $background-color-light;
+        cursor: pointer;
+    }
+}
+
+
+
