@@ -1,5 +1,5 @@
 <div class="products-container">
-    <div class="card flex flex-wrap gap-3 justify-content-start">
+    <div class="card flex flex-wrap gap-3 justify-content-center">
         <p-card *ngFor="let product of allProducts" class="flex" [style]="{ width: '300px' }">
             <div [routerLink]="['/products', product.id]">
                 <div class="image-container">

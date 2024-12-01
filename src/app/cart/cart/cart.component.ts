@@ -30,6 +30,9 @@ export class CartComponent implements OnInit {
     goToAllProduct() {
         this.router.navigate(['/products']);
     }
+    goToCheckout() {
+        this.router.navigate(['/checkout']);
+    }
 
     calculateTotals() {
         const totalQuantity  = this.cartItems.reduce((total, item) => total + item.quantity, 0);

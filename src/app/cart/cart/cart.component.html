@@ -34,7 +34,7 @@
             <p>Total quantity: {{ totalQuantity }}</p>
             <p>Subtotal: {{ totalPrice | currency:'EUR' }}</p>
             <div class="checkout-button-container">
-                <button class="button-dark">Checkout</button>
+                <button (click)="goToCheckout()" class="button-dark">Checkout</button>
             </div>
         </div>
     </div>

@@ -51,9 +51,9 @@ export class HeaderComponent implements OnInit, OnDestroy {
         badgeStyleClass: this.cartItems.length > 0 ? 'badge cart-badge' : ''
       },
       {
-        label: 'Admin',
+        label: 'User',
         icon: 'pi pi-user',
-        routerLink: '/admin'
+        routerLink: '/user'
       }
     ]
   }

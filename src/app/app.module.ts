@@ -14,13 +14,20 @@ import { SidebarModule } from 'primeng/sidebar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { BadgeModule } from 'primeng/badge';
-
+import { CheckoutComponent } from './checkout/checkout/checkout.component';
+import { ThankyouComponent } from './checkout/thankyou/thankyou.component';
+import { firebaseConfig } from '../enviroments/firebase-config';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
+    CheckoutComponent,
+    ThankyouComponent,
   ],
   imports: [
     BrowserModule,
@@ -34,7 +41,11 @@ import { BadgeModule } from 'primeng/badge';
     SidebarModule,
     RouterModule,
     BadgeModule,
-    CartModule
+    CartModule,
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireAuthModule,
+    AngularFirestoreModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
