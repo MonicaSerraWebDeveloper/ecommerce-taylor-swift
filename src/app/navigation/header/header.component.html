@@ -1,7 +1,16 @@
 <!-- header menu -->
-<div class="card">
-    <p-menubar [model]="items" />
-</div>
+
+<header>
+    <div class="header-container">
+        <div class="logo-container-text">
+            <h1>Taylor Swift</h1>
+        </div>
+        <div class="card">
+            <p-menubar [model]="items" />
+        </div>
+    </div>
+</header>
+
 <!-- sidebar preview cart -->
 <p-sidebar [(visible)]="sidebarVisible2" position="right">
     <div *ngIf="cartItems && cartItems.length === 0; else cartHasItems">

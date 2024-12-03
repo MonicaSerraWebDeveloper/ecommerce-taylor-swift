@@ -7,6 +7,9 @@ body {
     font-family: 'Times New Roman', Times, serif;
     color: $light-color-cream;
     background-color: $background-color-light;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
 }
 
 img {
@@ -14,11 +17,11 @@ img {
 }
 
 .cart-badge {
-    background-color: $background-color-dark;
+    background-color: $background-color-light;
     padding: 5px 9px;
     border-radius: 100%;
     margin: 5px;
-    color: white;
+    color: $background-color-dark;
     font-size: 12px;
 }
 

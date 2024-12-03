@@ -1,9 +1,51 @@
 @import '../../../styles/variables';
 
 /* Centrare gli items nel menubar */
-.p-element {
+
+.header-container {
     display: flex;
-    justify-content: center; 
+    justify-content: space-between;
+    background-color: $background-color-dark;
+    padding: 0 20px;
+
+    ::ng-deep .p-menubar{
+        background-color: $background-color-dark !important;
+        border: none !important;
+        color: $background-color-light;
+        font-family: 'Times New Roman', Times, serif;
+        text-transform: uppercase;
+
+        ::ng-deep .p-menubar-root-list > .p-menuitem > .p-menuitem-content .p-menuitem-link .p-menuitem-text {
+            color: $background-color-light;
+        }
+
+        ::ng-deep .p-menubar-root-list > .p-menuitem > .p-menuitem-content .p-menuitem-link .p-menuitem-text:hover {
+            background-color: transparent;
+        }
+
+        ::ng-deep .p-menuitem:not(.p-highlight):not(.p-disabled).p-focus > .p-menuitem-content {
+            background-color: transparent;
+            border: 1px solid $background-color-light;
+        }
+
+        ::ng-deep .p-menubar-root-list > .p-menuitem:not(.p-highlight):not(.p-disabled) > .p-menuitem-content:hover {
+            background-color: $light-color-cream;
+        }
+    }
+
+    .logo-container-text {
+        display: flex;
+        align-items: center;
+
+        h1 {
+            font-size: 26px;
+            color: $background-color-light;
+            font-weight: 400;
+        }
+    }
+}
+
+.p-element {
     overflow-y: scroll;
 }
 

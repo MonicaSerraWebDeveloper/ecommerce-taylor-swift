@@ -20,6 +20,7 @@ import { firebaseConfig } from '../enviroments/firebase-config';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { HomepageComponent } from './homepage/homepage.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
     FooterComponent,
     CheckoutComponent,
     ThankyouComponent,
+    HomepageComponent,
   ],
   imports: [
     BrowserModule,
@@ -45,7 +47,6 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireAuthModule,
     AngularFirestoreModule
-    
   ],
   providers: [],
   bootstrap: [AppComponent]

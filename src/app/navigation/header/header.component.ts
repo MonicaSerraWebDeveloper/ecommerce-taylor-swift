@@ -1,9 +1,8 @@
-import { Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { CartService } from '../../cart/cart.service';
 import { Subscription } from 'rxjs';
 import { ProductService } from '../../products/services/product.service';
 import { Router } from '@angular/router';
-import { BadgeModule } from 'primeng/badge';
 
 @Component({
   selector: 'app-header',
@@ -21,7 +20,6 @@ export class HeaderComponent implements OnInit, OnDestroy {
   constructor(
     private cartService: CartService,
     private router: Router,
-    private productService: ProductService
   ) {}
 
   ngOnInit(): void {
