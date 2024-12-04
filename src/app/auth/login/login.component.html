@@ -1,1 +1,16 @@
-<p>login works!</p>
+<div class="login-container">
+    <h2>Login to your account</h2>
+    <form (submit)="onLogin()" class="form">
+        <div class="input-container">
+            <label for="email-login">Email</label>
+            <input id="email-login" type="email" [(ngModel)]="email" name="email" required>
+        </div>
+        
+        <div class="input-container">
+            <label for="password-login">Password</label>
+            <input id="password-login" type="password" [(ngModel)]="password" name="password">
+        </div>
+        <button class="button-dark" type="submit">Login</button>
+        <small>If you are not already login  you can <a routerLink="/register">register here</a></small>
+    </form>
+</div>

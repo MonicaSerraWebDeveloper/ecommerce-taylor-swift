@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CartService } from '../cart.service';
 import { Router } from '@angular/router';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-cart',
@@ -16,6 +17,7 @@ export class CartComponent implements OnInit {
     constructor(
         private cartService: CartService,
         private router: Router,
+        private authService: AuthService
     ) {}
 
     ngOnInit(): void {
@@ -23,7 +25,6 @@ export class CartComponent implements OnInit {
             console.log(cart);
             this.cartItems = cart
             this.calculateTotals();
-
         })
     }
 
@@ -31,7 +32,14 @@ export class CartComponent implements OnInit {
         this.router.navigate(['/products']);
     }
     goToCheckout() {
-        this.router.navigate(['/checkout']);
+       this.authService.getCurrentUser().subscribe((user) => {
+            if (user) {
+                this.router.navigate(['/checkout'])
+            } else {
+                alert('You need to login to proceed to checkout')
+                this.router.navigate(['/login'])
+            }
+       })
     }
 
     calculateTotals() {
