@@ -3,6 +3,7 @@
 /* Centrare gli items nel menubar */
 
 .header-container {
+    width: 100%;
     display: flex;
     justify-content: space-between;
     background-color: $background-color-dark;

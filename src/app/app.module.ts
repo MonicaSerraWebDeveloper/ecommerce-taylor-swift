@@ -16,11 +16,15 @@ import { RouterModule } from '@angular/router';
 import { BadgeModule } from 'primeng/badge';
 import { CheckoutComponent } from './checkout/checkout/checkout.component';
 import { ThankyouComponent } from './checkout/thankyou/thankyou.component';
-import { firebaseConfig } from '../enviroments/firebase-config';
-import { AngularFireModule } from '@angular/fire/compat';
-import { AngularFireAuthModule } from '@angular/fire/compat/auth';
-import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { HomepageComponent } from './homepage/homepage.component';
+// Firebase configuration
+import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
+import { provideAuth, getAuth } from '@angular/fire/auth';
+import { provideFirestore, getFirestore } from '@angular/fire/firestore';
+import { firebaseConfig } from '../enviroments/firebase-config';
+import { LoginComponent } from './auth/login/login.component';
+import { RegisterComponent } from './auth/register/register.component';
+
 
 @NgModule({
   declarations: [
@@ -30,6 +34,8 @@ import { HomepageComponent } from './homepage/homepage.component';
     CheckoutComponent,
     ThankyouComponent,
     HomepageComponent,
+    LoginComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,
@@ -44,11 +50,12 @@ import { HomepageComponent } from './homepage/homepage.component';
     RouterModule,
     BadgeModule,
     CartModule,
-    AngularFireModule.initializeApp(firebaseConfig),
-    AngularFireAuthModule,
-    AngularFirestoreModule
   ],
-  providers: [],
+  providers: [
+    provideFirebaseApp(() => initializeApp(firebaseConfig)),
+      provideAuth(() => getAuth()),
+      provideFirestore(() => getFirestore()),
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
