@@ -32,14 +32,7 @@ export class CartComponent implements OnInit {
         this.router.navigate(['/products']);
     }
     goToCheckout() {
-       this.authService.getCurrentUser().subscribe((user) => {
-            if (user) {
-                this.router.navigate(['/checkout'])
-            } else {
-                alert('You need to login to proceed to checkout')
-                this.router.navigate(['/login'])
-            }
-       })
+        this.router.navigate(['/checkout']);
     }
 
     calculateTotals() {

@@ -13,7 +13,7 @@
             </div>
             <ng-template pTemplate="footer">
                 <div class="flex gap-5 mt-1">
-                    <p-button label="Add to cart" class="w-full" styleClass="w-full" />
+                    <button class="button-dark" [routerLink]="['/products', product.id]" >See more</button>
                 </div>
             </ng-template>
         </p-card>

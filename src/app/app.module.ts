@@ -17,13 +17,10 @@ import { BadgeModule } from 'primeng/badge';
 import { CheckoutComponent } from './checkout/checkout/checkout.component';
 import { ThankyouComponent } from './checkout/thankyou/thankyou.component';
 import { HomepageComponent } from './homepage/homepage.component';
-// Firebase configuration
-import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
-import { provideAuth, getAuth } from '@angular/fire/auth';
-import { provideFirestore, getFirestore } from '@angular/fire/firestore';
-import { firebaseConfig } from '../enviroments/firebase-config';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { AdminComponent } from './admin/admin.component';
 
 
 @NgModule({
@@ -36,6 +33,7 @@ import { RegisterComponent } from './auth/register/register.component';
     HomepageComponent,
     LoginComponent,
     RegisterComponent,
+    AdminComponent,
   ],
   imports: [
     BrowserModule,
@@ -50,12 +48,9 @@ import { RegisterComponent } from './auth/register/register.component';
     RouterModule,
     BadgeModule,
     CartModule,
+    ReactiveFormsModule
   ],
-  providers: [
-    provideFirebaseApp(() => initializeApp(firebaseConfig)),
-      provideAuth(() => getAuth()),
-      provideFirestore(() => getFirestore()),
-  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

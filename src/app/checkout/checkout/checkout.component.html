@@ -1,1 +1,99 @@
-<p>checkout works!</p>
+<div class="main-container">
+  <div class="title-container">
+    <h2>Checkout</h2>
+  </div>
+  <div class="checkout-container">
+      <div class="form-contaienr">
+          <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
+              <div class="shipping-container" formGroupName="shippingDetails">
+                <h3>Shipping Details</h3>
+                <div class="input-container">
+                  <label>First Name & Last Name:</label>
+                  <input formControlName="fullName" placeholder="First Name & Last Name" />
+                  <div *ngIf="checkoutForm.get('shippingDetails.fullName')?.invalid && checkoutForm.get('shippingDetails.fullName')?.touched">
+                    Name & Last Name are required.
+                  </div>
+                </div>
+                  
+                <div class="input-container">
+                  <label>Address:</label>
+                  <input formControlName="address" placeholder="Address" />
+                  <div *ngIf="checkoutForm.get('shippingDetails.address')?.invalid && checkoutForm.get('shippingDetails.address')?.touched">
+                    Address is required.
+                  </div>
+                </div>
+              
+                <div class="input-container">
+                  <label>City:</label>
+                  <input formControlName="city" placeholder="City" />
+                  <div *ngIf="checkoutForm.get('shippingDetails.city')?.invalid && checkoutForm.get('shippingDetails.city')?.touched">
+                    City is required.
+                  </div>
+                </div>
+              
+                <div class="input-container">
+                  <label>Postal Code:</label>
+                  <input formControlName="postalCode" placeholder="Postal Code" />
+                  <div *ngIf="checkoutForm.get('shippingDetails.postalCode')?.invalid && checkoutForm.get('shippingDetails.postalCode')?.touched">
+                    Postal code valid require 5 numbers.
+                  </div>
+                </div>
+              
+                <div class="input-container">
+                  <label>Phone:</label>
+                  <input formControlName="phone" placeholder="Phone" />
+                  <div *ngIf="checkoutForm.get('shippingDetails.phone')?.invalid && checkoutForm.get('shippingDetails.phone')?.touched">
+                    Write a valid phone number (10 numbers min).
+                  </div>
+                </div>
+              </div>
+              <div class="payment-container" formGroupName="paymentDetails">
+                <h3>Payment Details</h3>
+                <div class="input-container">
+                  <label>Card number:</label>
+                  <input formControlName="cardNumber" placeholder="Card number" />
+                  <div *ngIf="checkoutForm.get('paymentDetails.cardNumber')?.invalid && checkoutForm.get('paymentDetails.cardNumber')?.touched">
+                    Write a valid card number (16 numbers).
+                  </div>
+                </div>
+                <div class="input-container">
+                  <label>Expire Date:</label>
+                  <input formControlName="expiryDate" placeholder="MM/YY" />
+                  <div *ngIf="checkoutForm.get('paymentDetails.expiryDate')?.invalid && checkoutForm.get('paymentDetails.expiryDate')?.touched">
+                    Write a valid date (MM/YY).
+                  </div>
+                </div>
+                <div class="input-container">
+                  <label>CVV:</label>
+                  <input formControlName="cvv" placeholder="CVV" type="password" />
+                  <div *ngIf="checkoutForm.get('paymentDetails.cvv')?.invalid && checkoutForm.get('paymentDetails.cvv')?.touched">
+                    Write a valid CVV (3 cifre).
+                  </div>
+                </div>
+              </div>
+              <button type="submit" class="button-dark" [disabled]="checkoutForm.invalid">Pay Now</button>
+          </form>
+      </div>
+      <div class="cart-container">
+        <h3>Cart</h3>
+        <div class="recap-cart">
+          <ul>
+            <li *ngFor="let item of cartItems">
+              <div class="cart-item-media"><img [src]="item.image" [alt]="item.name"></div>
+              <div>{{ item.name }}</div>
+              <div>{{ item.price | currency:'EUR' }}</div>
+            </li>
+          </ul>
+        </div>
+        <div class="cart-footer-container">
+          <div class="cart-footer">
+              <p>Total quantity: {{ totalQuantity }}</p>
+              <div class="subtotal-container">
+                <p>Subtotal:</p>
+                <p class="price-text"><strong>{{ totalPrice | currency:'EUR' }}</strong></p>
+              </div>
+          </div>
+      </div>
+      </div>
+  </div>
+</div>

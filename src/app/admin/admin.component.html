@@ -1,0 +1,22 @@
+<div class="admin-container">
+    <h2>Gestione Utenti</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Email</th>
+          <th>Ruolo</th>
+          <th>Azioni</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users">
+          <td>{{ user.email }}</td>
+          <td>{{ user.role }}</td>
+          <td>
+            <button class="button-dark" (click)="deleteUser(user.userId)">Elimina</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

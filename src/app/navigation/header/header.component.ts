@@ -51,7 +51,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
       {
         label: 'User',
         icon: 'pi pi-user',
-        routerLink: '/user'
+        routerLink: '/login'
       }
     ]
   }

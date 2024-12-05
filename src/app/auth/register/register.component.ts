@@ -18,17 +18,21 @@ export class RegisterComponent {
     ) {}
 
     onRegister() {
-        this.authService.register(this.email, this.password).subscribe({
-            next: () => {
-                alert('Registration successful')
-                this.router.navigate(['/login'])
-            },
+      const userId = `user-${Date.now()}`;
+      this.authService.setUserId(userId);
 
-            error: (err) => {
-                console.error(err);
-                alert('Registration failed')
-            }
-        })
+      const body = { userId, email: this.email, password: this.password, role: 'user' };
+      this.authService.register(body).subscribe(
+        (response) => {
+          if(response) {
+            this.router.navigate(['/checkout']); 
+          } else {
+            alert('Registration failed')
+          }
+        },
+        error => {
+          console.error('Errore durante la registrazione:', error);
+        }
+      )
     }
-
 }

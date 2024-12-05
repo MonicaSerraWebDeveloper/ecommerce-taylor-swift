@@ -36,14 +36,14 @@ export class ProductListComponent implements OnInit {
                     ...this.clothingProducts.map(product => ({
                         ...product,
                         category: 'Clothing',
-                        sizes: product.sizes, // mantieni il campo sizes per i prodotti Clothing
-                        stock: undefined      // setta stock come undefined per Clothing
+                        sizes: product.sizes, 
+                        stock: undefined      
                     })),
                     ...this.generalProducts.map(product => ({
                         ...product,
                         category: 'General',
-                        sizes: undefined,     // setta sizes come undefined per i prodotti General
-                        stock: product.stock  // mantieni il campo stock per i prodotti General
+                        sizes: undefined,
+                        stock: product.stock
                     }))
                 ];                  
             },
