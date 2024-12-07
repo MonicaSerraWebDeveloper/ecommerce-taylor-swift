@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { CartService } from '../../cart/cart.service';
-import { Subscription } from 'rxjs';
+import { catchError, of, Subscription, take } from 'rxjs';
 import { ProductService } from '../../products/services/product.service';
 import { Router } from '@angular/router';
 
@@ -24,7 +24,11 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
       // Osserva il carrello e calcola il totale
-      this.cartService.cart$.subscribe((cart) => {
+      this.cartService.cart$.pipe(
+        catchError(() => {
+          return of([])
+        })
+      ).subscribe((cart) => {
         this.cartItems = cart;
         this.calculateTotals();
         this.updateCartMenuItem()

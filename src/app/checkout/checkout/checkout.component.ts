@@ -6,6 +6,7 @@ import { HttpClient } from '@angular/common/http';
 import { CartService } from '../../cart/cart.service';
 import { OrdersService } from '../../orders/orders.service';
 import { ProductService } from '../../products/services/product.service';
+import { catchError, EMPTY, take } from 'rxjs';
 
 @Component({
   selector: 'app-checkout',
@@ -46,6 +47,12 @@ export class CheckoutComponent implements OnInit {
         cvv: ['', [Validators.required, Validators.pattern('^[0-9]{3}$')]],
       }),
     });
+
+    this.checkoutForm.get("fullName")?.valueChanges.subscribe(nextValue=>{
+      console.log(nextValue)
+    }
+
+    )
   }
 
     loadCart() {
@@ -73,8 +80,14 @@ export class CheckoutComponent implements OnInit {
         paymentDetails: this.checkoutForm.value.paymentDetails,
       };
     
-      this.orderService.createOrder(orderData).subscribe({
-        next: () => {
+      this.orderService.createOrder(orderData).pipe(
+        take(1),
+        catchError(error => {
+        console.error('Error placing order:', error);
+        alert('There was an issue placing your order.');
+        return EMPTY
+      }
+      )).subscribe(() =>{
           // Aggiorna i prodotti nel magazzino
           this.cartItems.forEach(item => {
             this.productService.getProductLocalStorageById(item.id).subscribe(product => {
@@ -104,11 +117,6 @@ export class CheckoutComponent implements OnInit {
           // Svuota il carrello
           this.cartService.clearCart();
           this.router.navigate(['/thankyou']);
-        },
-        error: (err) => {
-          console.error('Error placing order:', err);
-          alert('There was an issue placing your order.');
-        }
       });
     }
 }

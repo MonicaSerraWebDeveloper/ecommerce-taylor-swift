@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../../services/product.service';
 import { ClothingProduct } from '../../models/clothing-products.model';
 import { GeneralProducts } from '../../models/general-products.model';
-import { forkJoin } from 'rxjs';
+import { catchError, EMPTY, forkJoin, of } from 'rxjs';
 import { CartService } from '../../../cart/cart.service';
 
 @Component({
@@ -25,8 +25,13 @@ export class ProductListComponent implements OnInit {
     ngOnInit(): void {
         
         forkJoin({
-            clothing: this.productService.getClothing(),
-            general: this.productService.getGeneralProducts()
+            clothing: this.productService.getClothing().pipe(catchError(() => 
+                of([])
+            )),
+            general: this.productService.getGeneralProducts().pipe(catchError(error => {
+                console.error(error)
+                return of([])
+            })),
         }).subscribe(
             ({ clothing, general }) => {
                 this.clothingProducts = clothing;
@@ -46,9 +51,6 @@ export class ProductListComponent implements OnInit {
                         stock: product.stock
                     }))
                 ];                  
-            },
-            (error) => {
-                console.log(error);
             }
         )
 

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ProductService } from '../../services/product.service';
 import { CartService } from '../../../cart/cart.service';
-import { forkJoin } from 'rxjs';
+import { catchError, forkJoin, of } from 'rxjs';
 
 @Component({
   selector: 'app-product-detail',
@@ -32,24 +32,35 @@ export class ProductDetailComponent implements OnInit {
         if(id !== null && !isNaN(Number(id))) {
             this.personId = Number(id);
 
-            this.cartService.cart$.subscribe((cart) => {
+            this.cartService.cart$.pipe(
+                catchError(() => {
+                    return of([])
+                })
+            ).subscribe((cart) => {
                 this.cartItems = cart
             });  
 
             // verifichiamo che l'id scritto nell'URL esista, gestiamo in caso il prodotto id non esista di restituire all'utente un avviso che il prodotto non è stato trovato
-            this.productService.productExist(this.personId).subscribe((exist) => {
+            this.productService.productExist(this.personId).pipe(
+                catchError(() => {
+                    this.invalidProduct();
+                    return of(false);
+                })
+            ).subscribe((exist) => {
                 if(exist) {
-                    this.product = this.productService.getProductById(this.personId).subscribe(
-                        (product) => {
-                            this.product = product    
+                    this.product = this.productService.getProductById(this.personId).pipe(
+                        catchError(() => {
+                            this.invalidProduct()
+                            return of(null)
+                    })
+                ).subscribe(
+                    (product) => {
+                        this.product = product    
 
-                            this.syncProductQuantityWithCart()
+                        this.syncProductQuantityWithCart()
 
-                        });
-                       
-                } else {
-                    this.invalidProduct()
-                };
+                    });
+                }
             });
         } else {
             this.invalidProduct()
