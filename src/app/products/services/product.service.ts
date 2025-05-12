@@ -5,6 +5,7 @@ import { ClothingProduct } from '../models/clothing-products.model';
 import { GeneralProducts } from '../models/general-products.model';
 import { shareReplay } from 'rxjs';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -62,21 +63,6 @@ export class ProductService {
         return JSON.parse(localStorage.getItem('products') || '[]');
     }
 
-    // updateProductInLocalStorage(product: any): void {
-    //     const products = JSON.parse(localStorage.getItem('products') || '[]');
-    
-    //     // Cerca il prodotto da aggiornare
-    //     const productIndex = products.findIndex((p: any) => p.id === product.id);
-    
-    //     if (productIndex > -1) {
-    //         products[productIndex] = product; // Aggiorna il prodotto
-    //     } else {
-    //         products.push(product); // Se non esiste, aggiungilo
-    //     }
-    
-    //     // Salva l'array aggiornato
-    //     localStorage.setItem('products', JSON.stringify(products));
-    // }
 
     getProductLocalStorageById(id: number): Observable<any> {
         return this.getAllProducts().pipe(
